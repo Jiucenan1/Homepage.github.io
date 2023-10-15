@@ -31,13 +31,16 @@
     <div class="container">
         <?php
         // 检查是否有名为 "str" 的GET参数
-        if (isset($_GET['str'])) {
+        if (isset($_GET['str'])) 
+        {
             // 获取GET参数的值
             $str = $_GET['str'];
             // 将参数打印在网页上
-            echo "<h1>你输入的参数是：</h1>";
-            echo "<p>" . htmlspecialchars($str) . "</p>";
-        } else {
+            echo "你输入的参数是: ";
+            echo $str;
+        } 
+        else 
+        {
             echo "<p>请提供名为 'str' 的GET参数。</p>";
         }
         ?>
