@@ -1,15 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>PHP输出到网页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET 参数演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to the PHP World!</h1>
-    <?php
-    echo "This message is generated using PHP!";
-    ?>
+    <div class="container">
+        <?php
+        // 检查是否有名为 "str" 的GET参数
+        if (isset($_GET['str'])) {
+            // 获取GET参数的值
+            $str = $_GET['str'];
+            // 将参数打印在网页上
+            echo "<h1>你输入的参数是：</h1>";
+            echo "<p>" . htmlspecialchars($str) . "</p>";
+        } else {
+            echo "<p>请提供名为 'str' 的GET参数。</p>";
+        }
+        ?>
+    </div>
 </body>
 
 </html>
